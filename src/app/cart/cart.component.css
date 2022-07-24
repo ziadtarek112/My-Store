@@ -1,0 +1,24 @@
+.cartItemsContainer{
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+
+ margin: 10px 10px;
+ border-radius: 5px;
+
+}
+.heading{
+  text-align: center;
+}
+.Button{
+  background-color: black;
+  color: white;
+  padding:5px 5px ;
+  margin:10px 10px ;
+}
+.dButton{
+  background-color: red;
+  color: white;
+  padding:5px 5px ;
+  margin:10px 10px ;
+}

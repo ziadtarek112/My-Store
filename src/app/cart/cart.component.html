@@ -1,0 +1,9 @@
+<h1 class="heading">Cart</h1>
+<div class="mainContainer"></div>
+<div class="cartItemsContainer">
+  <app-cart-items *ngFor="let c of cartItems"[cartItemsData]="c"></app-cart-items>
+  <h3>{{totalPrice}}</h3>
+<a routerLink="/form"> <button class="Button"> Confirm Purchase</button></a>
+
+</div>
+

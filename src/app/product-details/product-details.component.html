@@ -1,0 +1,17 @@
+<div class="detailContainer">
+  <img class="productImage" src="{{productdetail.url}}" alt="">
+ <div class="infoContainer">
+<h1>{{productdetail.name}}</h1>
+<h1>{{productdetail.price}}</h1>
+<h1>{{productdetail.description}}</h1>
+<select class="selectNumber">
+  <option value="">1</option>
+  <option value="">2</option>
+  <option value="">3</option>
+  <option value="">4</option>
+  <option value="">5</option>
+</select>
+<button (click)="onAddToCart(productdetail)" class="addToCart">Add to cart</button>
+</div>
+
+</div>

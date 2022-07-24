@@ -1,0 +1,9 @@
+.confContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 80vh;
+  margin: 10px 10px;
+}

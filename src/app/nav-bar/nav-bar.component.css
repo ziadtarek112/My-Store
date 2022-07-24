@@ -1,0 +1,27 @@
+h1{
+  font-family: 'Roboto', sans-serif;
+
+}
+.navBarContainer{
+  padding:5px 5px ;
+
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: white;
+
+}
+.home{
+}
+.shoppingCart{
+  width: 30px;
+  height: 30px;
+  background: black;
+  margin-left: auto;
+  align-self: center;
+  justify-content: flex-end;
+}
+a{
+  color: white;
+  text-decoration: none;
+}

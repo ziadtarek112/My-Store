@@ -1,0 +1,16 @@
+<div>
+
+<form #form="ngForm" class="formContainer" action="">
+  <h1>Information Submition</h1>
+  <div class="inputContainer">
+  <h3  for="">Name</h3>
+  <input [(ngModel)]="name" required type="text" name="first">
+  <h3 for="">Address</h3>
+  <input [(ngModel)]="address" required type="text" name="alo">
+  <h3 for="">Credit Card Number</h3>
+  <input [(ngModel)]="creditCard" required [minlength]= "16" [maxlength]="16" type="number" name="allooo">
+</div>
+  <a routerLink="/confirmation">   <button (click)="onSubmit()" type="submit"  class="Button" [disabled]="form.invalid">Submit</button></a>
+</form>
+
+</div>

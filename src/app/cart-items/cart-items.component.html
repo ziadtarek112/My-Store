@@ -1,0 +1,11 @@
+
+<div class="cartItems">
+<img src="{{cartItemsData.product.url}}" alt="" class="productImage">
+<div class="productInfo">
+<h3>Product Name : {{cartItemsData.product.name}}</h3>
+<h3>Prouduct price : {{cartItemsData.product.price}}</h3>
+<h3>Amount : {{cartItemsData.quantity}}</h3>
+<h3>Total : {{priceforeachItem}}</h3>
+<button (click)="deleteCartItem(cartItemsData)" class="dButton">Delete</button>
+</div>
+</div>
