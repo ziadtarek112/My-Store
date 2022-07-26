@@ -8,17 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./cart-items.component.css']
 })
 export class CartItemsComponent implements OnInit {
-  @Input() cartItemsData:cartItem;
-  priceforeachItem:number;
-  constructor(private cServiece:CartService) { }
+  @Input() cartItemsData: cartItem;
+  priceforeachItem: number;
+  constructor(private cServiece: CartService) { }
 
   ngOnInit(): void {
-   this.priceforeachItem=this.cartItemsData.product.price*this.cartItemsData.quantity;
+    this.priceforeachItem = this.cartItemsData.product.price * this.cartItemsData.quantity;
   }
 
-  deleteCartItem(item:cartItem){
+  deleteCartItem(item: cartItem) {
     this.cServiece.deleteProduct(item.product.id);
-
-    }
+    alert('item deleted')
+  }
 
 }

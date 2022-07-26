@@ -1,8 +1,10 @@
+import { cartItem } from './../Models/cartItem';
 import { CartService } from './../services/cart.service';
 import { product } from './../Models/product';
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,ParamMap } from '@angular/router';
+
 
 @Component({
   selector: 'app-product-details',
@@ -11,7 +13,9 @@ import { ActivatedRoute,ParamMap } from '@angular/router';
 })
 export class ProductDetailsComponent implements OnInit {
   id:number;
+  Quantity:number=1;
   productdetail:product;
+  cartItemHolder:cartItem=new cartItem;
   constructor(private PService:ProductsService,private activeRoute:ActivatedRoute,private cServiece:CartService) { }
   ngOnInit(): void {
     this.activeRoute.params.subscribe(params=>{
@@ -20,6 +24,9 @@ export class ProductDetailsComponent implements OnInit {
     })
   }
   onAddToCart(p:product){
-    this.cServiece.addProduct
+    this.cartItemHolder.product=p;
+    this.cartItemHolder.quantity=this.Quantity;
+    this.cServiece.addProduct(this.cartItemHolder);
+    alert('Item added')
   }
 }

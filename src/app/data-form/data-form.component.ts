@@ -1,6 +1,9 @@
 import { Users } from './../Models/Users';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { FormControl, FormGroup,ReactiveFormsModule, Validators} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-data-form',
@@ -11,16 +14,28 @@ export class DataFormComponent implements OnInit {
   name:string='';
   address:string='';
   creditCard:number;
+  validationForm:FormGroup;
   user:Users=new Users();
   constructor( private users:UserService) { }
 
   ngOnInit(): void {
+    this.validationForm=new FormGroup({
+      name:new FormControl('',[
+        Validators.required
+      ]),
+      address:new FormControl('',[
+        Validators.required
+      ]),
+      creditCard:new FormControl('',[
+        Validators.required,
+        Validators.maxLength(16),
+        Validators.minLength(16)
+      ])
+    });
   }
   onSubmit(){
-    console.log(this.name);
-    console.log(this.address);
-    console.log(this.creditCard);
 
+  
     this.user.name=this.name;
     this.user.address=this.address;
     this.user.CreditCardNumber=this.creditCard;

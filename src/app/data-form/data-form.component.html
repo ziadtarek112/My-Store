@@ -1,16 +1,32 @@
 <div>
 
-<form #form="ngForm" class="formContainer" action="">
-  <h1>Information Submition</h1>
-  <div class="inputContainer">
-  <h3  for="">Name</h3>
-  <input [(ngModel)]="name" required type="text" name="first">
-  <h3 for="">Address</h3>
-  <input [(ngModel)]="address" required type="text" name="alo">
-  <h3 for="">Credit Card Number</h3>
-  <input [(ngModel)]="creditCard" required [minlength]= "16" [maxlength]="16" type="number" name="allooo">
-</div>
-  <a routerLink="/confirmation">   <button (click)="onSubmit()" type="submit"  class="Button" [disabled]="form.invalid">Submit</button></a>
-</form>
+  <form [formGroup]="validationForm" class="formContainer">
+    <h1>Information Submition</h1>
+    <div class="inputContainer">
+      <h3 for="">Name</h3>
+      <input [(ngModel)]="name" type="text" formControlName="name" alo='ngModel'>
+      <div *ngIf="validationForm.controls['name'].invalid ">
+        <div *ngIf=" validationForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      <h3 for="">Address</h3>
+      <input [(ngModel)]="address" type="text" formControlName="address">
+      <div *ngIf="validationForm.controls['address'].invalid">
+        <div *ngIf=" validationForm.controls['address'].errors.required">
+          address is required.
+        </div>
+      </div>
+      <h3 for="">Credit Card Number</h3>
+      <input [(ngModel)]="creditCard" type="text" formControlName="creditCard">
+      <div *ngIf="validationForm.controls['creditCard'].invalid ">
+        <div *ngIf=" validationForm.controls['creditCard'].errors.required">
+            creditcard is required (16 digits)
+        </div>
+      </div>
+    </div>
+    <a routerLink="/confirmation"> <button (click)="onSubmit()" type="submit" [disabled]="validationForm.invalid"
+        class="Button">Submit</button></a>
+  </form>
 
 </div>
