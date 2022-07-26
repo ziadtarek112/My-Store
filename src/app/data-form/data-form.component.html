@@ -4,21 +4,21 @@
     <h1>Information Submition</h1>
     <div class="inputContainer">
       <h3 for="">Name</h3>
-      <input [(ngModel)]="name" type="text" formControlName="name" alo='ngModel'>
+      <input [(ngModel)]="name"(ngModelChange)="onChange($event)" type="text" formControlName="name" alo='ngModel'>
       <div *ngIf="validationForm.controls['name'].invalid ">
         <div *ngIf=" validationForm.controls['name'].errors.required">
           Name is required.
         </div>
       </div>
       <h3 for="">Address</h3>
-      <input [(ngModel)]="address" type="text" formControlName="address">
+      <input [(ngModel)]="address" (ngModelChange)="onChange($event)" type="text" formControlName="address">
       <div *ngIf="validationForm.controls['address'].invalid">
         <div *ngIf=" validationForm.controls['address'].errors.required">
           address is required.
         </div>
       </div>
       <h3 for="">Credit Card Number</h3>
-      <input [(ngModel)]="creditCard" type="text" formControlName="creditCard">
+      <input [(ngModel)]="creditCard" (ngModelChange)="onChange($event)" type="text" formControlName="creditCard">
       <div *ngIf="validationForm.controls['creditCard'].invalid ">
         <div *ngIf=" validationForm.controls['creditCard'].errors.required">
             creditcard is required (16 digits)

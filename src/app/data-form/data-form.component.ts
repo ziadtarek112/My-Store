@@ -33,9 +33,11 @@ export class DataFormComponent implements OnInit {
       ])
     });
   }
-  onSubmit(){
 
-  
+  onChange(change){
+    console.log(change + 'i can not find a usage for it in this context :)')
+  }
+  onSubmit(){
     this.user.name=this.name;
     this.user.address=this.address;
     this.user.CreditCardNumber=this.creditCard;
